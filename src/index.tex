@@ -1,0 +1,121 @@
+\documentclass[oneside, 12pt]{book}
+%\renewcommand*\familydefault{\sfdefault} 
+\usepackage[activeacute, spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{slashbox}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+%\usepackage[scaled]{helvet}
+%\renewcommand\familydefault{\sfdefault} 
+%\usepackage[T1]{fontenc}
+\linespread{1}%para texto a espacio y medio \textheight=24cm
+
+\begin{document}
+	
+	\frontmatter
+	
+	\begin{titlepage}
+	 	\begin{center}	 		
+	 		``Año del Buen Servicio al Ciudadano''
+		   	
+		   	\vskip 0.75cm
+		  	{\normalsize{\bf UNIVERSIDAD ANDINA NÉSTOR CÁCERES VELÁSQUEZ}}
+
+		  	{\normalsize{\bf FACULTAD DE INGENIERÍA DE SISTEMAS}}
+
+			{\normalsize{\bf C.A.P INGENIERÍA DE SISTEMAS}} 
+			\vskip 0.75cm
+			\begin{figure}[htb]
+			    \centering
+				\includegraphics[width=6cm, height=7cm]{../imgs/ESCUDO_UANCV.jpg}
+			\end{figure}
+		    \vskip 0.75cm
+		    
+		   	{\large{\bf INFORME DE PRÁCTICAS PRE PROFESIONALES}}\\
+		   	\vskip 1cm
+		   	
+		    Prácticas realizadas en:\\
+		    
+		    {\bf WELL DONE SOLUTIONS SAC}\\		  
+		    \vskip 1cm
+		    
+		   	Elaborado por:\\
+		   	
+		   	{\bf MAMANI PAUCAR, wilder}\\
+		   	
+		   	\vskip 1cm
+		   	
+		   	{\normalsize{\bf PARA OPTAR EL GRADO DE BACHILLER EN INGENIERÍA DE
+		   	SISTEMAS}}\\
+		   	
+		   	\vskip 2cm
+		    
+		   	{JULIACA - PERU}\\{2017}
+	 	\end{center}
+	\end{titlepage}		
+	
+	% Configuracion del documento
+		\newcommand{\bigrule}{\titlerule[0.5mm]}
+		\titleformat{\chapter}[display] % cambiamos el formato de los capitulos
+		{\bfseries\Huge} % por defecto se usaran caracteres de tamaÃ±o \Huge en negrita
+		{% contenido de la etiqueta
+			 \titlerule % linea horizontal
+			 \filleft % texto alineado a la derecha
+			 %\Large\chaptertitlename\ % ``Capitulo'' o ``Apendice'' en tamaÃ±o \Large en
+			 % lugar de \Huge \Large\thechapter % numero de capitulo en tamaÃ±o \Large
+		 }
+		{0mm} % espacio minimo entre etiqueta y cuerpo
+		{\filleft} % texto del cuerpo alineado a la derecha
+		[\vspace{0.5mm} \bigrule] % despues del cuerpo, dejar espacio vertical y
+		% trazar linea horizontal gruesa
+		
+		
+	% Configuracion para encabezados y pie de pagina
+		\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter. #1 }}{}}
+		\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+		\fancyhf{}
+		%\fancyhead[RO]{\bfseries\rightmark}
+		%\fancyhead[LE]{\bfseries\leftmark}
+		\fancyhead[RO]{\rightmark}
+		\fancyhead[LE]{\leftmark}
+		\fancyfoot[C]{\thepage}
+		\renewcommand{\headrulewidth}{0.5pt}
+	
+		\addtolength{\headheight}{0.5pt}
+		\fancypagestyle{plain}{
+		  \fancyhead{}
+		  \renewcommand{\headrulewidth}{0pt}
+		}
+	
+	% Dedicatoria	
+	\include{modulos/dedicatoria}
+	
+	\newpage
+	
+	\renewcommand\contentsname{Índice General}
+	\renewcommand\listfigurename{Índice de figuras}
+	
+	\listoffigures
+	\tableofcontents % Tabla de contenido
+	\mainmatter
+	\pagestyle{fancy}
+	% Presentacion
+	\include{modulos/presentacion}
+	\include{modulos/datos-generales-practicante}
+	\include{modulos/aspectos-generales-empresa}
+	\include{modulos/actividades-realizadas}
+	\include{modulos/descripcion-proyecto-realizado}
+	\include{modulos/conclusiones-recomendaciones}
+	\include{modulos/anexos}
+	
+	\bibliographystyle{apalike}
+	\bibliography{bib}
+	\nocite{*}
+
+\end{document}
+
